@@ -1,7 +1,7 @@
 <footer
-	class="footer bg-gradient-to-r from-blue5 via-purple4 to-red4 text-red1 items-center p-4 bg-neutral text-neutral-content"
+	class="footer bg-gradient-to-r from-blue5 via-purple4 to-red4 text-red1 items-center flex p-4 bg-neutral text-neutral-content"
 >
-	<div class="items-center grid-flow-col">
+	<div class="items-center grid-flow-col grow">
 		<p>© 2023</p>
 	</div>
 	<div class="grid-flow-col gap-4 md:place-self-center md:justify-self-end">
