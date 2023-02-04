@@ -7,7 +7,7 @@
 <div class="bg-purple3">
 	<Hero />
 
-	<Bluelake />
-
 	<Redsummit />
+
+	<Bluelake />
 </div>
