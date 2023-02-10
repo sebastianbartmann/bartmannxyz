@@ -32,7 +32,8 @@ module.exports = {
 			purple2: '#FCF2FF',
 			purple3: '#faf7fa',
 			yellow1: '#CFC81B',
-			yellow2: '#FAFFF2'
+			yellow2: '#FAFFF2',
+			textgrey: '#1f2937'
 		},
 		extend: {}
 	},
