@@ -58,7 +58,7 @@
 								<p class="text-sm p-2">Pretty selfexplanatory, I guess.</p>
 								<a
 									target="_blank"
-									href="https://redsummit.dev/projects/overview"
+									href="https://redsummit.dev/blog/overview/"
 									class="bg-red5 btn border border-red2 hover:border-red4 hover:bg-red9"
 									>Visit Now</a
 								>
