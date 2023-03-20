@@ -21,46 +21,24 @@
 				</p>
 			</div>
 			<div class="p-8">
-				<h3 class="my-4 text-xl font-bold text-center">Explore more</h3>
+				<h3 class="my-4 text-xl font-bold text-center">Explore the newest project</h3>
 				<div class="flex flex-wrap justify-center">
 					<div>
-						<div class="card w-72 m-2 bg-red9 text-red1 border border-red2">
+						<div class="card lg:w-96 w-72 m-2 bg-red9 text-red1 border border-red2">
 							<div class="card-body items-center text-center">
-								<h2 class="card-title">Dashboards</h2>
-								<p class="text-sm p-2">The frontend to my data.</p>
+								<h2 class="card-title">Weekly median appartment prices in vienna</h2>
+								<!-- svelte-ignore security-anchor-rel-noreferrer -->
+								<p class="text-sm p-2">Have a look at the <a
+									target="_blank"
+									class="text-red2"
+									href="https://redsummit.dev/projects/weekly-median-appartment-price/"
+									><strong>project breakdown</strong>.</a></p>
+								<!-- svelte-ignore security-anchor-rel-noreferrer -->
 								<a
 									target="_blank"
 									href="https://redsummit.dev/dashboards/overview"
 									class="bg-red5 btn border border-red2 hover:border-red4 hover:bg-red9"
-									>Visit Now</a
-								>
-							</div>
-						</div>
-					</div>
-					<div>
-						<div class="card w-72 m-2 bg-red9 text-red1 border border-red2">
-							<div class="card-body items-center text-center">
-								<h2 class="card-title">Projects</h2>
-								<p class="text-sm p-2">Tutorials and walk throughs.</p>
-								<a
-									target="_blank"
-									href="https://redsummit.dev/projects/overview"
-									class="bg-red5 btn border border-red2 hover:border-red4 hover:bg-red9"
-									>Visit Now</a
-								>
-							</div>
-						</div>
-					</div>
-					<div>
-						<div class="card w-72 m-2 bg-red9 text-red1 border border-red2">
-							<div class="card-body items-center text-center">
-								<h2 class="card-title">Blog</h2>
-								<p class="text-sm p-2">Pretty selfexplanatory, I guess.</p>
-								<a
-									target="_blank"
-									href="https://redsummit.dev/blog/overview/"
-									class="bg-red5 btn border border-red2 hover:border-red4 hover:bg-red9"
-									>Visit Now</a
+									>Open dashboard</a
 								>
 							</div>
 						</div>

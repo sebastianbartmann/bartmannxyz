@@ -6,7 +6,7 @@
 					<img class="aspect-auto" alt="mr. bartmann" src="images/self.webp" />
 				</div>
 			</div>
-			<h1 class="text-5xl p-12 font-bold">projects and endeavours</h1>
+			<h1 class="text-3xl p-8 font-bold">Sebastian Bartmann</h1>
 			<p class="py-4">
 				My main goal is improving communication between different agents over the internet.
 			</p>
@@ -19,6 +19,11 @@
 					<li>
 						<a class="link" target="_blank" rel="noreferrer" href="https://jamstack.org/"
 							>JAM Stack</a
+						>
+					</li>
+					<li>
+						<a class="link" target="_blank" rel="noreferrer" href="https://astro.build/"
+							>Astro</a
 						>
 					</li>
 					<li>
@@ -46,6 +51,31 @@
 					<li>
 						<a class="link" target="_blank" rel="noreferrer" href="https://danielmiessler.com/"
 							>Daniel Miessler</a
+						>
+					</li>
+				</ul>
+			</div>
+			<div class="min-w-[200px] m-8">
+				<h3 class="text-xl font-bold text-left">Awesome Podcasts</h3>
+				<ul class="list-disc list-inside text-left">
+					<li>
+						<a class="link" target="_blank" rel="noreferrer" href="https://hiddenforces.io/"
+							>Hidden Forces</a
+						>
+					</li>
+					<li>
+						<a class="link" target="_blank" rel="noreferrer" href="https://lexfridman.com/podcast/"
+							>Lex Fridman</a
+						>
+					</li>
+					<li>
+						<a class="link" target="_blank" rel="noreferrer" href="https://www.youtube.com/channel/UCESLZhusAkFfsNsApnjF_Cg"
+							>All In Podcast</a
+						>
+					</li>
+					<li>
+						<a class="link" target="_blank" rel="noreferrer" href="https://lifeaftergdpr.eu/"
+							>Life after GDPR</a
 						>
 					</li>
 				</ul>
