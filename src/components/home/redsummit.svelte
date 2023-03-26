@@ -26,12 +26,12 @@
 					<div>
 						<div class="card lg:w-96 w-72 m-2 bg-red9 text-red1 border border-red2">
 							<div class="card-body items-center text-center">
-								<h2 class="card-title">Weekly median appartment prices in vienna</h2>
+								<h2 class="card-title">Weekly median apartment prices in vienna</h2>
 								<!-- svelte-ignore security-anchor-rel-noreferrer -->
 								<p class="text-sm p-2">Have a look at the <a
 									target="_blank"
 									class="text-red2"
-									href="https://redsummit.dev/projects/weekly-median-appartment-price/"
+									href="https://redsummit.dev/projects/weekly-median-apartment-price/"
 									><strong>project breakdown</strong>.</a></p>
 								<!-- svelte-ignore security-anchor-rel-noreferrer -->
 								<a
