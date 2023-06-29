@@ -34,8 +34,10 @@ module.exports = {
 			yellow1: '#CFC81B',
 			yellow2: '#FAFFF2',
 			textgrey: '#1f2937'
-		},
-		extend: {}
+		}
+	},
+	daisyui: {
+		themes: false
 	},
 	plugins: [require('daisyui')]
 };
