@@ -22,7 +22,7 @@
 					<a
 						target="_blank"
 						href="https://bluelake.at"
-						class="bg-blue5 btn border border-blue8 hover:bg-blue4">Visit Website</a
+						class="bg-blue5 btn border border-blue8 text-blue1 hover:bg-blue4">Visit Website</a
 					>
 				</div>
 			</div>

@@ -28,17 +28,41 @@
 							<div class="card-body items-center text-center">
 								<h2 class="card-title">Weekly median apartment prices in vienna</h2>
 								<!-- svelte-ignore security-anchor-rel-noreferrer -->
-								<p class="text-sm p-2">Have a look at the <a
-									target="_blank"
-									class="text-red2"
-									href="https://redsummit.dev/projects/weekly-median-apartment-price/"
-									><strong>project breakdown</strong>.</a></p>
+								<p class="text-sm p-2">
+									Have a look at the <a
+										target="_blank"
+										class="text-red2"
+										href="https://redsummit.dev/projects/weekly-median-apartment-price/"
+										><strong>project breakdown</strong>.</a
+									>
+								</p>
 								<!-- svelte-ignore security-anchor-rel-noreferrer -->
 								<a
 									target="_blank"
 									href="https://redsummit.dev/dashboards/overview"
-									class="bg-red5 btn border border-red2 hover:border-red4 hover:bg-red9"
+									class="bg-red5 btn border text-red1 border-red2 hover:border-red4 hover:bg-red9"
 									>Open dashboard</a
+								>
+							</div>
+						</div>
+						<div class="card lg:w-96 w-72 m-2 bg-red9 text-red1 border border-red2">
+							<div class="card-body items-center text-center">
+								<h2 class="card-title">A simple Nostr Client as POC</h2>
+								<!-- svelte-ignore security-anchor-rel-noreferrer -->
+								<p class="text-sm p-2">
+									Have a look at the <a
+										target="_blank"
+										class="text-red2"
+										href="https://redsummit.dev/projects/building-nostr-client"
+										><strong>project breakdown</strong>.</a
+									>
+								</p>
+								<!-- svelte-ignore security-anchor-rel-noreferrer -->
+								<a
+									target="_blank"
+									href="https://redsummit.dev/nostr-client"
+									class="bg-red5 btn border text-red1 border-red2 hover:border-red4 hover:bg-red9"
+									>Try the Nostr Client</a
 								>
 							</div>
 						</div>
