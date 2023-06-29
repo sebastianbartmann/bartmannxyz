@@ -22,15 +22,21 @@
 						>
 					</li>
 					<li>
-						<a class="link" target="_blank" rel="noreferrer" href="https://astro.build/"
-							>Astro</a
-						>
+						<a class="link" target="_blank" rel="noreferrer" href="https://astro.build/">Astro</a>
 					</li>
 					<li>
 						<a class="link" target="_blank" rel="noreferrer" href="https://svelte.dev/">Svelte</a>
 					</li>
 					<li>
 						<a class="link" target="_blank" rel="noreferrer" href="https://cloud.google.com/">GCP</a
+						>
+					</li>
+					<li>
+						<a
+							class="link"
+							target="_blank"
+							rel="noreferrer"
+							href="https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki">BIP32</a
 						>
 					</li>
 				</ul>
@@ -44,13 +50,24 @@
 						>
 					</li>
 					<li>
-						<a class="link" target="_blank" rel="noreferrer" href="https://www.thedefiedge.com/"
-							>Defi Edge</a
+						<a class="link" target="_blank" rel="noreferrer" href="https://danielmiessler.com/"
+							>Daniel Miessler</a
 						>
 					</li>
 					<li>
-						<a class="link" target="_blank" rel="noreferrer" href="https://danielmiessler.com/"
-							>Daniel Miessler</a
+						<a
+							class="link"
+							target="_blank"
+							rel="noreferrer"
+							href="https://substack.com/profile/142426994-arthur-hayes">Arthur Hayes</a
+						>
+					</li>
+					<li>
+						<a
+							class="link"
+							target="_blank"
+							rel="noreferrer"
+							href="https://substack.com/@jameslavish/">James Lavish</a
 						>
 					</li>
 				</ul>
@@ -69,8 +86,11 @@
 						>
 					</li>
 					<li>
-						<a class="link" target="_blank" rel="noreferrer" href="https://www.youtube.com/channel/UCESLZhusAkFfsNsApnjF_Cg"
-							>All In Podcast</a
+						<a
+							class="link"
+							target="_blank"
+							rel="noreferrer"
+							href="https://www.youtube.com/@techbroslaurenmary">Tech Bros Lauren & Mary</a
 						>
 					</li>
 					<li>
