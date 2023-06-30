@@ -33,7 +33,10 @@ module.exports = {
 			purple3: '#faf7fa',
 			yellow1: '#CFC81B',
 			yellow2: '#FAFFF2',
-			textgrey: '#1f2937'
+			textgrey: '#1f2937',
+			white: '#FFF',
+			black: '#000',
+			orange: '#FF7514'
 		}
 	},
 	daisyui: {

@@ -10,6 +10,14 @@
 			<p class="py-4">
 				My main goal is improving communication between different agents over the internet.
 			</p>
+			<p class="py-4">
+				Mood: <a
+					class="p-1 rounded bg-gradient-to-r italic hover:underline from-red7 to-orange text-red1"
+					href="https://www.youtube.com/watch?v=DNYzHGM50Ys"
+					target="_blank"
+					><span>Too Bit To Fail - Proof of Word</span>
+				</a>
+			</p>
 		</div>
 
 		<div class="justify-center flex flex-wrap">
