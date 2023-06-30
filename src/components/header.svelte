@@ -19,10 +19,11 @@
 				</div>
 				<ul
 					tabindex="-1"
-					class="text-blue5 menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+					class="text-blue5 z-50 menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
 				>
-					<li><a class="text-lg" href="#bluelake">bluelake</a></li>
-					<li><a class="text-lg" href="#redsummit">redsummit</a></li>
+					<li><a class="text-lg" href="/#bluelake">bluelake</a></li>
+					<li><a class="text-lg" href="/#redsummit">redsummit</a></li>
+					<li><a class="text-lg" href="/tools">tools</a></li>
 				</ul>
 			</div>
 		</div>
