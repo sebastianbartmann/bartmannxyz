@@ -13,11 +13,14 @@
 			</div>
 			<div>
 				<p class="px-8">
-					RedSummit was created with the desire to make the most of life. It was always oriented
-					towards trying out new ideas and technologies, staying current and taking risks. After
-					many tests and changes, RedSummit has become what it is today: a place where innovative
-					projects are realized to integrate technologies into everyday life and actively
-					participate in their development.
+					With redsummit i try new tech and stuff.
+					<br />
+					For fun and to get some practice.
+					<br />
+					Mainly related to big data (like bigquery) and web frontend tech (like astro).
+					<br />
+					In the back, which is not visible on the website, i play around with my BTC node. Maybe i get
+					around to expose some of those scripts at some point.
 				</p>
 			</div>
 			<div class="p-8">

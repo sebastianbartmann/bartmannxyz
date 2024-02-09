@@ -13,9 +13,9 @@
 			<p class="py-4">
 				Mood: <a
 					class="p-1 rounded bg-gradient-to-r italic hover:underline from-red7 to-orange text-red1"
-					href="https://www.youtube.com/watch?v=DNYzHGM50Ys"
+					href="https://www.youtube.com/watch?v=sk1j6cg2p3k"
 					target="_blank"
-					><span>Too Bit To Fail - Proof of Word</span>
+					><span>Sahara Cowboy</span>
 				</a>
 			</p>
 		</div>
