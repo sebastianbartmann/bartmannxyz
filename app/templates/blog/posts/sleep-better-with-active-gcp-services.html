@@ -1,0 +1,57 @@
+{% extends 'blog/post.html' %}
+
+{% block post %}
+
+
+<div class="m-auto max-w-screen-md p-6">
+    <div>
+        <h1 class="text-4xl">
+            how to sleep well <br/>while running gcp services
+            <br/> or how to stop runaway GCP costs
+        </h1><br>
+        <div class="border-2 rounded-xl p-4 m-4 bg-snd">
+            <h2>Update (09.06.2024):</h2>
+            <br>
+            <p><strong>the correct way to do this is to <a href="https://www.youtube.com/watch?v=F4omjjMZ54k"><u>set up
+                Budgets / API limits.</u></a></strong> This is quite hidden and requires you to submit a request form. When I tested it, it
+                was granted
+                immediately. I'd guess this happens when requesting lower limits instead of higher than default limitations.</p><br>
+        </div>
+        <div class="border-2 rounded-xl p-4 m-4 bg-snd">
+            <h2>Update (23.10.2023):</h2>
+            <br>
+            <p><strong>I've had this check in place and it didn't work lol</strong></p><br>
+            <p>At least the bill was only 30€ but it changed my perspective.</p><br>
+            <p>The issue was that the pubsub topic wasn't triggered. I don't know why, in testing it worked.
+                It might have to do with the way the resource calculated the cost but I don't care any more.
+                I've come to the conclusion that the only way to keep costs in check is to know wtf you are doing
+                when setting up resources. This is a shitty way but as long as google doesn't implement an off-switch
+                for billing this is the best/only way. I hate it but i'll live with it.</p>
+        </div>
+        <br/>
+        Run a <strong>cloud function</strong> that <strong
+    >stops all billing</strong
+    > when costs exceed the budget.
+        <br/>
+        <br/>
+        <h2 class="text-2xl">how can this be done?</h2>
+        <ol class="list-decimal p-6 leading-loose">
+            <li>setting up a <strong>budget alert</strong></li>
+            <li>which triggers a <strong>pub/sub</strong></li>
+            <li>which runs a <strong>cloud function</strong></li>
+            <li>which <strong>removes the billing</strong></li>
+        </ol>
+
+        <img
+                alt="sleep-well-at-night"
+                src="/static/images/blog_images/sleep-well-at-night.webp"
+        />
+        <br/>
+        But how you ask? I followed <a
+            class="text-link"
+            href="https://www.youtube.com/watch?v=KiTg8RPpGG4">this</a
+    > tutorial.
+    </div>
+</div>
+
+{% endblock %}

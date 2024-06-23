@@ -2,7 +2,7 @@
 const colors = require("tailwindcss/colors");
 
 const config = {
-    content: ["./templates/**/*.{html, jinja}"],
+    content: ["./templates/**/*.{html, jinja}", "./app/static/js/**/*.js", "./app/**/*.py"],
     theme: {
         minHeight: {
             25: '25vh',

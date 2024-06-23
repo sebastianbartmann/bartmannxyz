@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}bartmann.xyz{% endblock %}
+
+{% block content %}
+
+{% include 'blog/partials/header.html' %}
+
+<div class="bg-mainred text-white">
+    {% block post %}
+    {% endblock %}
+</div>
+
+<div class="flex-grow bg-mainred"></div>
+
+{% include 'blog/partials/footer.html' %}
+
+{% endblock %}
+

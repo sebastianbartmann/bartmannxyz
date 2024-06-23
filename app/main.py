@@ -4,6 +4,7 @@ from fastapi.templating import Jinja2Templates
 from fastapi.staticfiles import StaticFiles
 import subprocess
 from contextlib import asynccontextmanager
+from routes import main, blog
 
 
 @asynccontextmanager
@@ -28,32 +29,5 @@ app = FastAPI(lifespan=lifespan)
 templates = Jinja2Templates(directory="templates")
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
-
-@app.get("/")
-async def read_root(request: Request):
-    return templates.TemplateResponse("index.html", {"request": request})
-
-
-@app.get("/blog")
-async def read_root(request: Request):
-    return templates.TemplateResponse("blog.html", {"request": request})
-
-
-@app.get("/blog/posts/how-it-started")
-async def read_root(request: Request):
-    return templates.TemplateResponse("posts/how-it-started.html", {"request": request})
-
-@app.get("/projects")
-async def read_root(request: Request):
-    return templates.TemplateResponse("projects.html", {"request": request})
-
-
-# Serve robots.txt and sitemap.xml directly
-@app.get("/robots.txt")
-async def robots_txt():
-    return StaticFiles(directory="static").lookup_path("/robots.txt")
-
-
-@app.get("/sitemap.xml")
-async def sitemap_xml():
-    return StaticFiles(directory="static").lookup_path("/sitemap.xml")
+app.include_router(main.router)
+app.include_router(blog.router)
