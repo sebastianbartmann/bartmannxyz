@@ -17,13 +17,34 @@ fi
 # Create a temporary file to store the contents
 TMP_FILE=$(mktemp)
 
-# Concatenate the contents of all files in the folder to the temporary file
-for file in "$FOLDER"/*; do
-  if [ -f "$file" ]; then
-    cat "$file" >> "$TMP_FILE"
-    echo "" >> "$TMP_FILE"  # Add a newline between files for clarity
-  fi
-done
+# Function to process files recursively
+process_files() {
+  local dir="$1"
+  local rel_path="${2:-}"
+  for item in "$dir"/*; do
+    if [ -f "$item" ]; then
+      # Exclude specific files
+      if [[ "$(basename "$item")" != "copy_to_clipboard.sh" && "$(basename "$item")" != "__init__.py" ]]; then
+        local file_path="$rel_path$(basename "$item")"
+        echo "### File: $file_path" >> "$TMP_FILE"
+        echo "" >> "$TMP_FILE"
+        cat "$item" >> "$TMP_FILE"
+        echo "" >> "$TMP_FILE"
+        echo "### End of file: $file_path" >> "$TMP_FILE"
+        echo "" >> "$TMP_FILE"
+        echo "" >> "$TMP_FILE"
+      fi
+    elif [ -d "$item" ]; then
+      # Process subdirectories, excluding 'app' and 'static'
+      if [[ "$(basename "$item")" != "app" && "$(basename "$item")" != "static" ]]; then
+        process_files "$item" "$rel_path$(basename "$item")/"
+      fi
+    fi
+  done
+}
+
+# Start processing files from the given folder
+process_files "$FOLDER"
 
 # Copy the contents of the temporary file to the clipboard
 if command -v xclip &> /dev/null; then
@@ -39,4 +60,4 @@ fi
 # Clean up
 rm "$TMP_FILE"
 
-echo "Contents of all files in $FOLDER have been copied to the clipboard."
+echo "Contents of files in $FOLDER (excluding specified files and folders) have been copied to the clipboard with filenames."

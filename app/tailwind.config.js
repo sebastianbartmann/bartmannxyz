@@ -39,6 +39,8 @@ const config = {
             orange: '#FF7514',
             transparent: "transparent",
             white: "#eee5f7",
+            lime: colors.lime,
+            green: colors.green,
             black: colors.black,
             mainred: "#54020c",
             snd: "#860313",
