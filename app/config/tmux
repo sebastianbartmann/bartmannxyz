@@ -1,0 +1,50 @@
+# Use Ctrl+s as prefix (avoiding Ctrl+a since it conflicts with shell)
+unbind C-b
+set-option -g prefix C-f
+bind-key C-f send-prefix
+
+# Simple splits (after pressing Ctrl+s)
+bind s split-window -h  # horizontal split
+bind v split-window -v  # vertical split
+
+# Vim copy mode
+setw -g mode-keys vi
+bind-key -T copy-mode-vi v send-keys -X begin-selection
+bind-key -T copy-mode-vi y send-keys -X copy-selection-and-cancel
+
+# For tmux 3.2 and newer, also add:
+set-option -g allow-passthrough on
+
+bind -n C-h select-pane -L
+bind -n C-j select-pane -D
+bind -n C-k select-pane -U
+bind -n C-l select-pane -R
+
+# Basic settings
+set -g mouse on
+set -g base-index 1
+
+set -g default-terminal "screen-256color"
+set -ag terminal-overrides ",xterm-256color:RGB"
+
+# Start window numbering at 1 (easier to reach on keyboard)
+set -g base-index 1
+setw -g pane-base-index 1
+
+# Set scrollback buffer to 10000
+set -g history-limit 10000
+
+# Enable clipboard integration
+set -g set-clipboard on
+
+# Easy config reload
+bind-key r source-file ~/.tmux.conf \; display-message "tmux.conf reloaded."
+
+# change active pane highlight
+set -g pane-border-lines double
+set -g pane-active-border-style 'fg=brightcyan,bold'
+set -g pane-border-style 'fg=colour234'
+
+# pane colours
+set -g window-active-style 'bg=colour234'
+set -g window-style 'bg=default'
