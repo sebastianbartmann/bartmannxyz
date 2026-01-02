@@ -1,20 +1,18 @@
 # Use an official Python runtime as a parent image
 FROM python:3.9-slim
 
-# Set the working directory in the container
 WORKDIR /app
 
-# Copy the current directory contents into the container at /app
+# Install uv and sync dependencies from pyproject.toml/uv.lock
+COPY ./app/pyproject.toml /app/pyproject.toml
+COPY ./app/uv.lock /app/uv.lock
+RUN pip install --no-cache-dir uv && uv sync --project /app
+
+# Copy the application code last for better build caching
 COPY ./app /app
 
-# Install any needed packages specified in requirements.txt
-RUN pip install --no-cache-dir -r /app/requirements.txt
-
-# Make port 80 available to the world outside this container
 EXPOSE 2000
 
-# Define environment variable
-ENV NAME bartmannxyz
+ENV NAME=bartmannxyz
 
-# Run app.py when the container launches
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "2000"]
+CMD ["uv", "run", "--project", "/app", "uvicorn", "main:app", "--host", "0.0.0.0", "--port", "2000"]
