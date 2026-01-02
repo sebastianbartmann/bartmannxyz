@@ -1,4 +1,1 @@
-to compile tailwind run: 
-``` sh
-tailwindcss -i ./static/tailwind.css -o ./app/static/css/main.css
-```
+Styles are plain CSS in `app/static/css/main.css`.
