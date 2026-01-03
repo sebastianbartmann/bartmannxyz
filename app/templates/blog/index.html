@@ -6,17 +6,19 @@
 
 {% include 'blog/partials/header.html' %}
 
-<div class="bg-mainred">
-    {% include 'blog/partials/overview.html' %}
-</div>
+<main class="blog-page">
+    <div class="blog">
+        {% include 'blog/partials/overview.html' %}
+    </div>
 
-<div class="flex-grow bg-mainred"></div>
-
-<div class="bg-mainred">
-    {% include 'blog/partials/linebars.html' %}
-</div>
+    <div class="blog-page__bottom">
+        <div class="spacer blog__spacer"></div>
+        <div class="blog blog--light">
+            {% include 'blog/partials/linebars.html' %}
+        </div>
+    </div>
+</main>
 
 {% include 'blog/partials/footer.html' %}
 
 {% endblock %}
-

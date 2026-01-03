@@ -3,34 +3,28 @@
 {% block title %}bartmann.xyz{% endblock %}
 
 {% block content %}
-<div class="m-4 text-blue">
-    <h1 class="text-4xl">Projects</h1>
-    <a href="/" class="text-sm"><u>back home</u></a>
-    <ul class="m-4 list-disc">
-        <li class="m-4">
-            <div>
-                <a href="https://redsummit.dev/projects/building-nostr-client" class="text-blue"><u>custom nostr client</u><span
-                        class="text-xs"> - published on: 07.05.2023</span></a>
-                <p class="text-sm my-2">Curious about nostr, hating all existing clients... <br>Since it's a very simple protocol why not
-                    built my own client?!</p>
-            </div>
+<section class="projects">
+    <h1 class="projects__title">Projects</h1>
+    <a href="/" class="projects__back">back home</a>
+    <ul class="projects__list">
+        <li class="projects__item">
+            <a href="https://redsummit.dev/projects/building-nostr-client" class="projects__link">custom nostr client</a>
+            <span class="projects__meta"> - published on: 07.05.2023</span>
+            <p class="projects__desc">Curious about nostr, hating all existing clients... <br>Since it's a very simple protocol why not
+                built my own client?!</p>
         </li>
-        <li class="m-4">
-            <div>
-                <a href="https://redsummit.dev/projects/weekly-median-apartment-price/" class="text-blue"><u>Weekly median apartment
-                    prices in
-                    vienna</u><span
-                        class="text-xs"> - published on: 13.03.2023</span></a>
-                <p class="text-sm my-2">Crawled directly from apartment listings, twice a week. No filter, just the median.</p>
-            </div>
+        <li class="projects__item">
+            <a href="https://redsummit.dev/projects/weekly-median-apartment-price/" class="projects__link">Weekly median apartment
+                prices in
+                vienna</a>
+            <span class="projects__meta"> - published on: 13.03.2023</span>
+            <p class="projects__desc">Crawled directly from apartment listings, twice a week. No filter, just the median.</p>
         </li>
-        <li class="m-4">
-            <div>
-                <a href="https://thirdpartycheck.com" class="text-blue"><u>Third Party Check</u><span
-                        class="text-xs"> - published on: 01.01.2025</span></a>
-                <p class="text-sm my-2">Discover which third-party domains your website connects to and what cookies are being set.</p>
-            </div>
+        <li class="projects__item">
+            <a href="https://thirdpartycheck.com" class="projects__link">Third Party Check</a>
+            <span class="projects__meta"> - published on: 01.01.2025</span>
+            <p class="projects__desc">Discover which third-party domains your website connects to and what cookies are being set.</p>
         </li>
     </ul>
-</div>
+</section>
 {% endblock %}

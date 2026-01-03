@@ -5,16 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}bartmann.xyz{% endblock %}</title>
 
-    <script src="/static/scripts/htmx.min.js"></script>
+    <script src="/static/scripts/htmx.min.js?v={{ static_version }}"></script>
 
     <link rel="icon" href="/static/images/profile.webp"/>
     <title>bartmann.xyz</title>
     <meta name="description" content="website description"/>
     <meta name="viewport" content="width=device-width"/>
-    <link rel="stylesheet" href="/static/css/main.css">
-    <link rel="stylesheet" href="/static/css/custom.css">
+    <link rel="stylesheet" href="/static/css/main.css?v={{ static_version }}">
+    <link rel="stylesheet" href="/static/css/custom.css?v={{ static_version }}">
 </head>
-<body class="flex min-h-full flex-col justify-between text-textgrey">
+<body>
 {% block content %}{% endblock %}
 </body>
 </html>

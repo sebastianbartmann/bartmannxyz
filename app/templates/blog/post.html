@@ -6,14 +6,15 @@
 
 {% include 'blog/partials/header.html' %}
 
-<div class="bg-mainred text-white">
-    {% block post %}
-    {% endblock %}
-</div>
+<main class="blog-page">
+    <div class="blog blog--post">
+        {% block post %}
+        {% endblock %}
+    </div>
 
-<div class="flex-grow bg-mainred"></div>
+    <div class="spacer blog__spacer"></div>
+</main>
 
 {% include 'blog/partials/footer.html' %}
 
 {% endblock %}
-
