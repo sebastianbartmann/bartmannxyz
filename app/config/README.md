@@ -1,6 +1,6 @@
 # Config Files
 
-This directory contains public configuration files exposed via the `/config/{config_name}` API endpoint.
+This directory contains configuration files exposed via the `/setup/config/{config_name}` API endpoint.
 
 ## Files
 
@@ -35,19 +35,22 @@ If you add a new config file, you must:
 
 ## API Endpoints
 
-- `GET /config/claude.md` - Returns claude.md as plain text
-- `GET /config/tmux` - Returns tmux config as plain text
-- `GET /config/nvim.tar.gz` - Returns nvim archive for download
+- `GET /setup` - Setup API guide
+- `GET /setup/config/claude.md` - Returns claude.md as plain text
+- `GET /setup/config/tmux` - Returns tmux config as plain text
+- `GET /setup/config/nvim.tar.gz` - Returns nvim archive for download
 
 ## Usage on Other Machines
 
 ```bash
+export SETUP_TOKEN='c5125794ff68841579e822ca4c05edb644e16aeccb36916aa46970f7fe915de9'
+
 # Download claude.md
-curl https://bartmann.xyz/config/claude.md -o ~/.claude/CLAUDE.md
+curl -H "X-Setup-Token: $SETUP_TOKEN" https://bartmann.xyz/setup/config/claude.md -o ~/.claude/CLAUDE.md
 
 # Download tmux config
-curl https://bartmann.xyz/config/tmux -o ~/.tmux.conf
+curl -H "X-Setup-Token: $SETUP_TOKEN" https://bartmann.xyz/setup/config/tmux -o ~/.tmux.conf
 
 # Download and extract nvim config
-curl https://bartmann.xyz/config/nvim.tar.gz | tar -xzf - -C ~/.config/
+curl -H "X-Setup-Token: $SETUP_TOKEN" https://bartmann.xyz/setup/config/nvim.tar.gz | tar -xzf - -C ~/.config/
 ```

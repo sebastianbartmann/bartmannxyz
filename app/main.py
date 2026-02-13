@@ -2,7 +2,7 @@ from fastapi import FastAPI, Request, Form
 from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
 from fastapi.staticfiles import StaticFiles
-from routes import main, blog, config
+from routes import main, blog, setup
 from pathlib import Path
 import os
 
@@ -29,4 +29,4 @@ templates.env.globals["static_version"] = static_version
 
 app.include_router(main.router)
 app.include_router(blog.router)
-app.include_router(config.router)
+app.include_router(setup.router)
