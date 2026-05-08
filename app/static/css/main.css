@@ -108,22 +108,27 @@ ol {
 .page-root::before {
     content: "";
     position: absolute;
-    z-index: -1;
-    width: 8px;
-    height: min(92vw, 760px);
-    top: -80px;
-    left: calc(50% + 255px);
+    z-index: 0;
+    top: clamp(36px, 7vw, 84px);
+    bottom: clamp(42px, 7vw, 96px);
+    left: max(18px, calc(50% - 596px));
+    width: 4px;
     background: var(--ds-signal);
     border-radius: var(--ds-r-pill);
-    opacity: 0.86;
-    transform: rotate(38deg);
-    transform-origin: top center;
-    box-shadow: 0 0 0 6px rgba(255, 107, 53, 0.14);
+    opacity: 0.9;
+    box-shadow: 0 0 0 5px rgba(255, 107, 53, 0.12);
+    pointer-events: none;
 }
 
 .page-root--blog::before {
-    left: calc(50% + 310px);
-    height: min(95vw, 840px);
+    left: max(18px, calc(50% - 496px));
+}
+
+.hero,
+.projects,
+.blog {
+    position: relative;
+    z-index: 1;
 }
 
 .site-header,
@@ -299,6 +304,20 @@ ol {
     align-items: flex-start;
     justify-content: flex-end;
     gap: 18px;
+}
+
+.hero__card::before,
+.projects::before,
+.blog-list::after,
+.post::before {
+    content: "";
+    display: block;
+    width: 64px;
+    height: 4px;
+    margin-bottom: 18px;
+    border-radius: var(--ds-r-pill);
+    background: var(--ds-signal);
+    box-shadow: 0 0 0 5px rgba(255, 107, 53, 0.10);
 }
 
 .hero__eyebrow,
@@ -543,6 +562,8 @@ ol {
     max-width: 880px;
     margin: 0 auto;
     padding: 0;
+    display: flex;
+    flex-direction: column;
 }
 
 .blog-list::before {
@@ -551,6 +572,11 @@ ol {
     margin-bottom: 24px;
     font: 700 clamp(48px, 8vw, 84px)/0.92 var(--ds-font-display);
     letter-spacing: -0.035em;
+}
+
+.blog-list::after {
+    margin-bottom: 22px;
+    order: -1;
 }
 
 .blog-list__items {
@@ -747,9 +773,7 @@ ol {
 
 @media (max-width: 860px) {
     .page-root::before {
-        left: auto;
-        right: 18px;
-        height: 720px;
+        content: none;
     }
 
     .hero__inner {
