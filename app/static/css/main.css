@@ -746,9 +746,12 @@ ol {
 
 @media (max-width: 860px) {
     .page-root::before {
-        left: auto;
-        right: 18px;
-        height: calc(100% + 160vw);
+        left: 58%;
+        right: auto;
+        width: 7px;
+        height: calc(100% + 190vw);
+        opacity: 0.76;
+        box-shadow: 0 0 0 5px rgba(255, 107, 53, 0.10);
     }
 
     .hero__inner {
