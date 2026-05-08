@@ -110,14 +110,14 @@ ol {
     position: absolute;
     z-index: -1;
     width: 8px;
-    top: -160px;
-    bottom: -160px;
+    height: calc(100% + 140vw);
+    top: 50%;
     left: calc(50% + 255px);
     background: var(--ds-signal);
     border-radius: var(--ds-r-pill);
     opacity: 0.86;
-    transform: rotate(38deg);
-    transform-origin: top center;
+    transform: translateY(-50%) rotate(38deg);
+    transform-origin: center;
     box-shadow: 0 0 0 6px rgba(255, 107, 53, 0.14);
 }
 
@@ -748,8 +748,7 @@ ol {
     .page-root::before {
         left: auto;
         right: 18px;
-        top: -120px;
-        bottom: -120px;
+        height: calc(100% + 160vw);
     }
 
     .hero__inner {
