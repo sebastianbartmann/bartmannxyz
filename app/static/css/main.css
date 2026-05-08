@@ -110,8 +110,8 @@ ol {
     position: absolute;
     z-index: -1;
     width: 8px;
-    height: min(92vw, 760px);
-    top: -80px;
+    top: -160px;
+    bottom: -160px;
     left: calc(50% + 255px);
     background: var(--ds-signal);
     border-radius: var(--ds-r-pill);
@@ -123,7 +123,6 @@ ol {
 
 .page-root--blog::before {
     left: calc(50% + 310px);
-    height: min(95vw, 840px);
 }
 
 .site-header,
@@ -749,7 +748,8 @@ ol {
     .page-root::before {
         left: auto;
         right: 18px;
-        height: 720px;
+        top: -120px;
+        bottom: -120px;
     }
 
     .hero__inner {
