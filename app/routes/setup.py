@@ -1,7 +1,8 @@
 from pathlib import Path
 
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter, Depends, HTTPException
 from fastapi.responses import FileResponse, PlainTextResponse
+from security import require_setup_auth
 
 router = APIRouter()
 
@@ -16,10 +17,14 @@ Single entry point for machine bootstrap and configuration.
 
 - `GET /setup` - this guide
 
+## Authentication
+
+All setup endpoints require HTTP Basic auth.
+
 ## Quickstart
 
 ```bash
-curl https://bartmann.xyz/setup
+curl -u sebastian:config https://bartmann.xyz/setup
 ```
 
 ## Config Endpoints
@@ -30,9 +35,9 @@ curl https://bartmann.xyz/setup
 
 Install all:
 ```bash
-curl https://bartmann.xyz/setup/config/claude.md -o ~/.claude/CLAUDE.md
-curl https://bartmann.xyz/setup/config/tmux -o ~/.tmux.conf
-curl https://bartmann.xyz/setup/config/nvim.tar.gz | tar -xzf - -C ~/.config/
+curl -u sebastian:config https://bartmann.xyz/setup/config/claude.md -o ~/.claude/CLAUDE.md
+curl -u sebastian:config https://bartmann.xyz/setup/config/tmux -o ~/.tmux.conf
+curl -u sebastian:config https://bartmann.xyz/setup/config/nvim.tar.gz | tar -xzf - -C ~/.config/
 ```
 
 ## SSH Key Endpoints
@@ -43,7 +48,7 @@ curl https://bartmann.xyz/setup/config/nvim.tar.gz | tar -xzf - -C ~/.config/
 
 Example:
 ```bash
-curl https://bartmann.xyz/setup/ssh/keys/all
+curl -u sebastian:config https://bartmann.xyz/setup/ssh/keys/all
 ```
 
 ## Compatibility Aliases
@@ -76,13 +81,13 @@ def _ssh_keys_dir() -> Path:
 @router.get("/setup", response_class=PlainTextResponse)
 @router.get("/setup/", response_class=PlainTextResponse, include_in_schema=False)
 @router.get("/config/", response_class=PlainTextResponse, include_in_schema=False)
-async def get_setup_guide():
+async def get_setup_guide(_: None = Depends(require_setup_auth)):
     return PlainTextResponse(SETUP_GUIDE.strip())
 
 
 @router.get("/setup/config/{config_name}")
 @router.get("/config/{config_name}", include_in_schema=False)
-async def get_config(config_name: str):
+async def get_config(config_name: str, _: None = Depends(require_setup_auth)):
     config_file = _config_path(config_name)
 
     if config_name == "nvim.tar.gz":
@@ -97,7 +102,7 @@ async def get_config(config_name: str):
 
 @router.get("/setup/ssh/keys", response_class=PlainTextResponse)
 @router.get("/ssh/keys", response_class=PlainTextResponse, include_in_schema=False)
-async def list_ssh_keys():
+async def list_ssh_keys(_: None = Depends(require_setup_auth)):
     ssh_keys_dir = _ssh_keys_dir()
     keys = [f.stem for f in ssh_keys_dir.glob("*.pub")]
     return "\n".join(keys)
@@ -105,7 +110,7 @@ async def list_ssh_keys():
 
 @router.get("/setup/ssh/keys/all", response_class=PlainTextResponse)
 @router.get("/ssh/keys/all", response_class=PlainTextResponse, include_in_schema=False)
-async def get_all_ssh_keys():
+async def get_all_ssh_keys(_: None = Depends(require_setup_auth)):
     ssh_keys_dir = _ssh_keys_dir()
     all_keys = [key_file.read_text().strip() for key_file in ssh_keys_dir.glob("*.pub")]
     return "\n".join(all_keys)
@@ -113,7 +118,7 @@ async def get_all_ssh_keys():
 
 @router.get("/setup/ssh/keys/{key_name}", response_class=PlainTextResponse)
 @router.get("/ssh/keys/{key_name}", response_class=PlainTextResponse, include_in_schema=False)
-async def get_ssh_key(key_name: str):
+async def get_ssh_key(key_name: str, _: None = Depends(require_setup_auth)):
     ssh_keys_dir = _ssh_keys_dir()
     key_file = ssh_keys_dir / f"{key_name}.pub"
     if not key_file.exists():
