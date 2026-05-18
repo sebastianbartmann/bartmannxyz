@@ -6,6 +6,13 @@
     <title>{% block title %}bartmann.xyz{% endblock %}</title>
 
     <script src="/static/scripts/htmx.min.js?v={{ static_version }}"></script>
+    <script>
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    </script>
 
     <link rel="icon" href="/static/images/profile.webp"/>
     <meta name="description" content="Sebastian Bartmann builds agent-facing internet tools and writes about the work."/>
@@ -17,5 +24,6 @@
 </head>
 <body>
 {% block content %}{% endblock %}
+<script src="/static/scripts/theme.js?v={{ static_version }}"></script>
 </body>
 </html>

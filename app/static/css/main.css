@@ -30,6 +30,27 @@
     --ds-shadow-pop: 0 12px 40px -16px rgba(26, 29, 28, 0.25);
 }
 
+.dark {
+    --ds-cream: #151712;
+    --ds-cream-soft: #20251c;
+    --ds-paper: #24291f;
+    --ds-paper-warm: #1b1f18;
+    --ds-forest: #d8e7d2;
+    --ds-forest-deep: #f2f7ed;
+    --ds-forest-soft: #b8cbb0;
+    --ds-sage: #9fbd98;
+    --ds-sage-soft: #2e3a29;
+    --ds-warn-soft: #493023;
+    --ds-danger-soft: #4a2b25;
+    --ds-ink: #f4f1e9;
+    --ds-ink-muted: #c5cbbf;
+    --ds-ink-soft: #9fa89a;
+    --ds-line: rgba(244, 241, 233, 0.14);
+    --ds-line-soft: rgba(244, 241, 233, 0.08);
+    --ds-shadow-card: 0 1px 0 rgba(255, 255, 255, 0.04), 0 12px 30px -18px rgba(0, 0, 0, 0.55);
+    --ds-shadow-pop: 0 16px 48px -18px rgba(0, 0, 0, 0.70);
+}
+
 * {
     box-sizing: border-box;
 }
@@ -135,6 +156,13 @@ ol {
     backdrop-filter: blur(12px);
 }
 
+.dark .site-header,
+.dark .site-footer,
+.dark .site-header--blog,
+.dark .site-footer--blog {
+    background: rgba(21, 23, 18, 0.88);
+}
+
 .site-header {
     position: sticky;
     top: 0;
@@ -185,6 +213,7 @@ ol {
 .site-nav__links {
     display: flex;
     gap: 8px;
+    margin-left: auto;
 }
 
 .site-nav__link {
@@ -199,6 +228,44 @@ ol {
 
 .site-nav__link:hover {
     background: var(--ds-paper-warm);
+}
+
+.theme-toggle {
+    width: 36px;
+    height: 36px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 8px;
+    padding: 0;
+    color: var(--ds-ink);
+    background: var(--ds-paper);
+    border: 1px solid var(--ds-line);
+    border-radius: var(--ds-r-md);
+    box-shadow: var(--ds-shadow-card);
+    cursor: pointer;
+}
+
+.theme-toggle:hover {
+    background: var(--ds-paper-warm);
+}
+
+.theme-toggle__icon {
+    width: 19px;
+    height: 19px;
+    display: block;
+}
+
+.theme-toggle__icon--sun {
+    display: none;
+}
+
+.dark .theme-toggle__icon--sun {
+    display: block;
+}
+
+.dark .theme-toggle__icon--moon {
+    display: none;
 }
 
 .site-footer__content {
@@ -250,6 +317,10 @@ ol {
 .button--primary {
     background: var(--ds-forest);
     color: var(--ds-cream);
+}
+
+.dark .button--primary {
+    color: var(--ds-paper-warm);
 }
 
 .button--primary:hover {
@@ -315,6 +386,10 @@ ol {
     overflow: hidden;
     margin-bottom: 8px;
     box-shadow: 0 14px 34px -20px rgba(26, 29, 28, 0.45);
+}
+
+.dark .hero__avatar {
+    box-shadow: 0 14px 34px -20px rgba(0, 0, 0, 0.65);
 }
 
 .hero__avatar img {
@@ -799,6 +874,12 @@ ol {
 
     .site-nav__link {
         padding: 8px 9px;
+    }
+
+    .theme-toggle {
+        width: 34px;
+        height: 34px;
+        margin-left: 4px;
     }
 
     .hero {
