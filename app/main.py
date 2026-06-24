@@ -6,8 +6,13 @@ from routes import main, blog, setup
 from pathlib import Path
 import os
 
+from analytics import analytics_client_from_env, install_analytics_middleware
 
 app = FastAPI()
+install_analytics_middleware(
+    app,
+    analytics_client_from_env("bartmannxyz", "WEBSITE_ANALYTICS_BARTMANNXYZ_TOKEN"),
+)
 
 templates = Jinja2Templates(directory="templates")
 app.mount("/static", StaticFiles(directory="static"), name="static")

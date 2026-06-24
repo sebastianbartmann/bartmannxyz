@@ -1,4 +1,5 @@
 fastapi
+httpx
 uvicorn
 jinja2
 python-multipart
