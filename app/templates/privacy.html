@@ -76,25 +76,25 @@
             </thead>
             <tbody>
             <tr>
-                <td><code>__Host-dl_c</code></td>
-                <td>bartmann.xyz</td>
-                <td>Stores your choice (accept or reject), the panel text version and the month
+                <td data-label="Name"><code>__Host-dl_c</code></td>
+                <td data-label="Set on">bartmann.xyz</td>
+                <td data-label="Purpose">Stores your choice (accept or reject), the panel text version and the month
                     of the choice. Set for both choices.</td>
-                <td>12 months</td>
+                <td data-label="Lifetime">12 months</td>
             </tr>
             <tr>
-                <td><code>__Host-dl_v</code></td>
-                <td>bartmann.xyz</td>
-                <td>Random visitor ID, signed by the server. Only after you accept.</td>
-                <td>Until your consent expires (12 months, not extended); deleted when you
+                <td data-label="Name"><code>__Host-dl_v</code></td>
+                <td data-label="Set on">bartmann.xyz</td>
+                <td data-label="Purpose">Random visitor ID, signed by the server. Only after you accept.</td>
+                <td data-label="Lifetime">Until your consent expires (12 months, not extended); deleted when you
                     reject or withdraw</td>
             </tr>
             <tr>
-                <td><code>__Host-dl_g</code></td>
-                <td>id.datalayer.solutions</td>
-                <td>Random ID that links your visitor IDs on my sites (see below). Only after
+                <td data-label="Name"><code>__Host-dl_g</code></td>
+                <td data-label="Set on">id.datalayer.solutions</td>
+                <td data-label="Purpose">Random ID that links your visitor IDs on my sites (see below). Only after
                     you accept.</td>
-                <td>12 months from its last use</td>
+                <td data-label="Lifetime">12 months from its last use</td>
             </tr>
             </tbody>
         </table>
@@ -124,9 +124,10 @@
         there for 24 months and then deleted. Daily totals per site, which contain no data
         about individual visitors, are kept after that.</p>
     <p>The data is not passed on or sold to anyone, and no third-party analytics or advertising
-        tools are used. One exception unrelated to analytics: the pages load their fonts from
-        Google Fonts, so your browser connects to Google's servers, which see your IP
-        address.</p>
+        tools are used. The pages load no resources from third parties: fonts, scripts, styles
+        and images all come from bartmann.xyz itself. The only other host your browser contacts
+        is my own id.datalayer.solutions: for the cross-site cookie described above, only after
+        you accept, and when you use the <em>Forget me across sites</em> button below.</p>
 
     <h2 class="projects__section-title">Withdraw your consent</h2>
     <p>Use <em>Privacy choices</em> in the footer of any other page and choose <em>Reject</em>,

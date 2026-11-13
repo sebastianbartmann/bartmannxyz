@@ -6,7 +6,9 @@ from routes import main, blog, setup
 from pathlib import Path
 import os
 
-app = FastAPI()
+# No /docs, /redoc or /openapi.json: FastAPI's default doc pages load scripts and fonts
+# from third-party CDNs (cdn.jsdelivr.net, fonts.googleapis.com) and this site has no public API.
+app = FastAPI(docs_url=None, redoc_url=None, openapi_url=None)
 
 templates = Jinja2Templates(directory="templates")
 app.mount("/static", StaticFiles(directory="static"), name="static")
