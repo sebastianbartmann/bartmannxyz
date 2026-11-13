@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}bartmann.xyz{% endblock %}</title>
 
-    <script src="/static/scripts/htmx.min.js?v={{ static_version }}"></script>
     <script>
         if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
             document.documentElement.classList.add('dark');
@@ -14,10 +13,9 @@
         }
     </script>
 
-    <link rel="icon" href="/static/images/profile.webp"/>
+    <link rel="icon" href="/static/favicon.svg" type="image/svg+xml">
     <meta name="description" content="Sebastian Bartmann builds agent-facing internet tools and writes about the work."/>
     <link rel="stylesheet" href="/static/css/main.css?v={{ static_version }}">
-    <link rel="stylesheet" href="/static/css/custom.css?v={{ static_version }}">
     {#- consent-layer tracker and consent panel (served by the collector under /dl/).
         The privacy page overrides this block with nothing: it must load neither tag. #}
     {% block consent_layer %}

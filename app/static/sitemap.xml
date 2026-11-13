@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://bartmann.xyz/</loc>
-    <lastmod>2023-01-22</lastmod>
-  </url>
+  <url><loc>https://bartmann.xyz/</loc></url>
+  <url><loc>https://bartmann.xyz/projects</loc></url>
+  <url><loc>https://bartmann.xyz/blog</loc></url>
+  <url><loc>https://bartmann.xyz/blog/posts/sleep-better-with-active-gcp-services</loc></url>
+  <url><loc>https://bartmann.xyz/blog/posts/have-a-basic-structure</loc></url>
+  <url><loc>https://bartmann.xyz/blog/posts/how-it-started</loc></url>
+  <url><loc>https://bartmann.xyz/privacy</loc></url>
 </urlset>

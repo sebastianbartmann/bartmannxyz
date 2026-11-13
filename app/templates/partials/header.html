@@ -2,8 +2,8 @@
     <nav class="site-nav">
         <a href="/" class="site-nav__brand">bartmann.xyz</a>
         <div class="site-nav__links">
-            <a href="/projects" class="site-nav__link">Projects</a>
-            <a href="/blog" class="site-nav__link">Blog</a>
+            <a href="/projects" class="site-nav__link"{% if request.url.path.startswith('/projects') %} aria-current="page"{% endif %}>Projects</a>
+            <a href="/blog" class="site-nav__link"{% if request.url.path.startswith('/blog') %} aria-current="page"{% endif %}>Writing</a>
         </div>
         <button class="theme-toggle" type="button" data-theme-toggle aria-label="Toggle dark mode">
             <svg class="theme-toggle__icon theme-toggle__icon--sun" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">

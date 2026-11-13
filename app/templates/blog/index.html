@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
 
-{% block title %}bartmann.xyz{% endblock %}
+{% block title %}Writing · bartmann.xyz{% endblock %}
 
 {% block content %}
 
-{% include 'blog/partials/header.html' %}
+{% include 'partials/header.html' %}
 
 <main class="blog-page page-root page-root--blog">
     <div class="blog">
@@ -12,13 +12,12 @@
     </div>
 
     <div class="blog-page__bottom">
-        <div class="spacer blog__spacer"></div>
-        <div class="blog blog--light">
+        <div class="blog">
             {% include 'blog/partials/linebars.html' %}
         </div>
     </div>
 </main>
 
-{% include 'blog/partials/footer.html' %}
+{% include 'partials/footer.html' %}
 
 {% endblock %}
