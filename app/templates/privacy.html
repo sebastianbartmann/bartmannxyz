@@ -1,0 +1,161 @@
+{% extends 'base.html' %}
+
+{% block title %}Privacy · bartmann.xyz{% endblock %}
+
+{#- This page must load neither /dl/s.css nor /dl/s.js: nothing is recorded here and the
+    consent panel never appears on it. #}
+{% block consent_layer %}{% endblock %}
+
+{% block content %}
+{% include 'partials/header.html' %}
+
+<main class="page-root page-root--projects">
+<section class="projects privacy">
+    <div class="projects__eyebrow">bartmann.xyz</div>
+    <h1 class="projects__title">Privacy</h1>
+    <p class="projects__intro">What this site records about your visit, why, and how to stop it.
+        Nothing is recorded for this page itself.</p>
+
+    <h2 class="projects__section-title">Who is responsible</h2>
+    <p>Sebastian Bartmann, <a class="link" href="mailto:hey@bartmann.xyz">hey@bartmann.xyz</a>.
+        I run this site and the sites named below myself.</p>
+
+    <h2 class="projects__section-title">The consent panel</h2>
+    <p>On your first visit a panel asks whether this site may recognise your browser on later
+        visits and on my other sites. You choose <em>Accept</em> or <em>Reject</em>; the page
+        cannot be used until you have chosen. You can change your choice at any time with
+        <em>Privacy choices</em> in the footer of every page.</p>
+    <p>Until you have chosen, only the fact that the panel was shown is counted: the page
+        path, the time and random technical IDs for this page load and this panel, together
+        with the values described under <a class="link" href="#cookieless">counting without
+        cookies</a>. Nothing else about your visit is sent until you choose. If you leave
+        without choosing, nothing more is recorded.</p>
+
+    <h2 class="projects__section-title">If you accept</h2>
+    <p>The site stores a cookie with a random visitor ID, so that your later visits can be
+        linked. Your browser language and the width of the browser window are recorded as
+        well. Your choice lasts 12 months; after that, or when the panel text changes, you are
+        asked again and a new visitor ID is issued. Every new consent also gets a new visitor
+        ID. Legal basis: your consent (Art. 6(1)(a) GDPR).</p>
+
+    <h2 class="projects__section-title" id="cookieless">If you reject: counting without cookies</h2>
+    <p>Only your choice is stored in your browser, no identifier. Visits are still counted:
+        for each request the server computes a code from your IP address (for IPv6 only the
+        first half, the network part), your browser identification (the user agent string)
+        and the site name, using a secret key that changes every day and is deleted after the
+        day has passed. This code lets me group the page views of one browser on this site
+        within one day. It cannot be used to follow you across days or across sites, and it
+        does not identify you. Your IP address is never stored. The same counting applies to
+        the panel display described above. Legal basis: my legitimate interest in knowing how
+        this site is used (Art. 6(1)(f) GDPR).</p>
+
+    <h2 class="projects__section-title">What is recorded</h2>
+    <p>After your choice, for each page view and for a few clicks (the email link, links to my
+        projects):</p>
+    <ul class="privacy__list">
+        <li>time, page path and the event name (for example a page view or a click on the email
+            link)</li>
+        <li>campaign parameters in the address (<code>utm_*</code>), if present; no other
+            parts of the address</li>
+        <li>the page you came from: for other websites only their address, for example
+            <code>https://www.google.com</code>, for this site the path</li>
+        <li>your browser identification (user agent string) and the daily code described
+            above</li>
+        <li>only if you accepted: the visitor ID, browser language and window width</li>
+    </ul>
+    <p>This site has no search or input forms. On requestsearch.com and thirdpartycheck.com the
+        search terms and checked domains entered there are recorded; their privacy pages
+        describe this.</p>
+
+    <h2 class="projects__section-title">Cookies and browser storage</h2>
+    <p>All cookies are set by the server and are bound to the exact host name.</p>
+    <div class="privacy__table-wrap">
+        <table class="privacy__table">
+            <thead>
+            <tr><th>Name</th><th>Set on</th><th>Purpose</th><th>Lifetime</th></tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td><code>__Host-dl_c</code></td>
+                <td>bartmann.xyz</td>
+                <td>Stores your choice (accept or reject), the panel text version and the month
+                    of the choice. Set for both choices.</td>
+                <td>12 months</td>
+            </tr>
+            <tr>
+                <td><code>__Host-dl_v</code></td>
+                <td>bartmann.xyz</td>
+                <td>Random visitor ID, signed by the server. Only after you accept.</td>
+                <td>Until your consent expires (12 months, not extended); deleted when you
+                    reject or withdraw</td>
+            </tr>
+            <tr>
+                <td><code>__Host-dl_g</code></td>
+                <td>id.datalayer.solutions</td>
+                <td>Random ID that links your visitor IDs on my sites (see below). Only after
+                    you accept.</td>
+                <td>12 months from its last use</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <p>After you accept, the site also keeps a short marker (<code>dl_gs</code>) in the
+        browser's session storage, which is cleared when you close the tab. The dark mode
+        switch stores your colour preference in your browser's local storage; it is never
+        sent anywhere.</p>
+
+    <h2 class="projects__section-title">Recognition across my sites</h2>
+    <p>I also run thirdpartycheck.com, requestsearch.com and datalayer.solutions. Each site asks
+        separately. Your visits are linked between two of these sites only if you accepted on
+        both. Two ways are used:</p>
+    <ul class="privacy__list">
+        <li>When you follow a link from one of these sites to another, a one-time random code
+            is added to the address (<code>?_dl=…</code>) and removed again on arrival.</li>
+        <li>The cookie <code>__Host-dl_g</code> on id.datalayer.solutions holds a random ID that
+            each site you accepted on can match once per browser session. This cookie is only
+            used once cross-site recognition through id.datalayer.solutions is switched on;
+            browsers that block third-party cookies prevent it.</li>
+    </ul>
+    <p>Both only show that the same browser was probably used, not who you are.</p>
+
+    <h2 class="projects__section-title">Where the data goes and how long it is kept</h2>
+    <p>The records are written on the web server that runs this site (rented from Hetzner) and
+        kept there for 14 days. During that time they are copied to my own server at home, kept
+        there for 24 months and then deleted. Daily totals per site, which contain no data
+        about individual visitors, are kept after that.</p>
+    <p>The data is not passed on or sold to anyone, and no third-party analytics or advertising
+        tools are used. One exception unrelated to analytics: the pages load their fonts from
+        Google Fonts, so your browser connects to Google's servers, which see your IP
+        address.</p>
+
+    <h2 class="projects__section-title">Withdraw your consent</h2>
+    <p>Use <em>Privacy choices</em> in the footer of any other page and choose <em>Reject</em>,
+        or use the button below. Withdrawal applies to this site only; the visitor ID cookie is
+        deleted and later visits are counted without cookies as described above.</p>
+    <form class="privacy__form" method="post" action="/dl/c">
+        <input type="hidden" name="choice" value="withdrawn">
+        <button class="button button--primary" type="submit">Withdraw consent on this site</button>
+    </form>
+    <p>To stop your visits from being linked across my sites, also delete the shared cookie on
+        id.datalayer.solutions:</p>
+    <form class="privacy__form" method="post" action="https://id.datalayer.solutions/dl/g/forget">
+        <button class="button button--secondary" type="submit">Forget me across sites</button>
+    </form>
+
+    <h2 class="projects__section-title">Access and erasure</h2>
+    <p>Write to <a class="link" href="mailto:hey@bartmann.xyz">hey@bartmann.xyz</a> to ask what
+        is stored about you or to have it deleted. I store no names or contact details with
+        these records, so I can only find yours by their visitor ID: please include the value
+        of the <code>__Host-dl_v</code> cookie for bartmann.xyz (visible in your browser's
+        developer tools) before you withdraw. Records counted without cookies cannot be traced
+        back to you, because the daily key that produced their code no longer exists.</p>
+
+    <h2 class="projects__section-title">Complaints</h2>
+    <p>You have the right to complain to the Austrian data protection authority
+        (Österreichische Datenschutzbehörde,
+        <a class="link" href="https://www.dsb.gv.at/" rel="noreferrer">dsb.gv.at</a>).</p>
+</section>
+</main>
+
+{% include 'partials/footer.html' %}
+{% endblock %}

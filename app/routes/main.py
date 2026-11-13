@@ -26,6 +26,12 @@ async def read_root(request: Request):
     return templates.TemplateResponse("/projects/apartment-prices-vienna/project-index.html", {"request": request})
 
 
+
+@router.get("/privacy")
+async def privacy(request: Request):
+    return templates.TemplateResponse("privacy.html", {"request": request})
+
+
 # Serve robots.txt and sitemap.xml directly
 @router.get("/robots.txt")
 async def robots_txt():
