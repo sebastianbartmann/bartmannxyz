@@ -182,13 +182,13 @@ ol {
     overflow: hidden;
 }
 
+/* Site chrome: one container width for header and footer, aligned with the page content. */
 .site-header,
 .site-footer {
     position: relative;
     z-index: 2;
     color: var(--ui-text);
     background: color-mix(in srgb, var(--ui-bg) 92%, transparent);
-    border-color: var(--ui-line);
     backdrop-filter: blur(12px);
 }
 
@@ -204,69 +204,72 @@ ol {
 
 .site-nav,
 .site-footer__content {
-    width: min(1120px, calc(100vw - 32px));
+    width: min(1120px, calc(100% - 48px));
     margin: 0 auto;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 14px 0;
+}
+
+.site-nav {
+    min-height: 64px;
+    gap: 28px;
 }
 
 .site-nav__brand {
+    display: inline-flex;
+    align-items: center;
+    min-height: 40px;
     color: var(--ui-strong);
-    font: 600 14px/1.2 var(--ds-font-mono);
-    letter-spacing: 0;
+    font: 600 17px/1.2 var(--ds-font-display);
+    letter-spacing: -0.02em;
 }
 
 .site-nav__brand::after {
     content: "";
-    display: inline-block;
     width: 6px;
     height: 6px;
-    margin-left: 7px;
+    margin: 5px 0 0 6px;
     border-radius: 50%;
     background: var(--ui-focus);
-    vertical-align: 1px;
 }
 
 .site-nav__links {
     display: flex;
-    gap: 8px;
-    margin-left: auto;
+    gap: 4px;
 }
 
 .site-nav__link {
     display: inline-flex;
     align-items: center;
     min-height: 36px;
-    padding: 8px 12px;
+    padding: 0 12px;
     border-radius: var(--ds-r-md);
     color: var(--ui-muted);
     font: 500 14px/1.2 var(--ds-font-sans);
 }
 
-.site-nav__link:hover,
-.site-nav__link[aria-current="page"] {
-    color: var(--ui-accent);
-}
-
 .site-nav__link:hover {
+    color: var(--ui-strong);
     background: var(--ui-hover);
 }
 
+.site-nav__link[aria-current="page"] {
+    color: var(--ui-accent);
+    background: var(--ui-tint);
+}
+
 .theme-toggle {
-    width: 36px;
-    height: 36px;
+    width: 40px;
+    height: 40px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    margin-left: 8px;
+    margin-left: auto;
     padding: 0;
-    color: var(--ui-strong);
-    background: var(--ui-panel);
+    color: var(--ui-text);
+    background: transparent;
     border: 1px solid var(--ui-line);
     border-radius: var(--ds-r-md);
-    box-shadow: var(--ds-shadow-card);
     cursor: pointer;
 }
 
@@ -275,8 +278,8 @@ ol {
 }
 
 .theme-toggle__icon {
-    width: 19px;
-    height: 19px;
+    width: 18px;
+    height: 18px;
     display: block;
 }
 
@@ -293,48 +296,29 @@ ol {
 }
 
 .site-footer__content {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 4px 24px;
+    padding: 18px 0 24px;
     color: var(--ui-muted);
-    font: 500 12px/1.2 var(--ds-font-mono);
+    font: 400 13px/1.4 var(--ds-font-sans);
 }
 
 .site-footer__links {
     display: flex;
     flex-wrap: wrap;
-    gap: 4px 16px;
-    margin: 0 16px;
+    gap: 0 20px;
 }
 
 .site-footer__link {
-    color: var(--ui-muted);
-    text-decoration: underline;
-    text-decoration-color: var(--ui-line);
-    text-underline-offset: 0.2em;
+    display: inline-flex;
+    align-items: center;
+    min-height: 32px;
+    color: var(--ui-accent);
 }
 
 .site-footer__link:hover {
     text-decoration: underline;
-    text-decoration-color: currentColor;
-}
-
-.site-footer__icon {
-    flex: none;
-    width: 38px;
-    height: 38px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: var(--ds-r-pill);
-    background: var(--ui-panel);
-    border: 1px solid var(--ui-line);
-    color: var(--ui-accent);
-    box-shadow: var(--ds-shadow-card);
-}
-
-.site-footer__icon svg {
-    width: 1.1rem;
-    height: 1.1rem;
-    stroke: currentColor;
-    stroke-width: 1.8;
 }
 
 .button {
@@ -877,21 +861,25 @@ ol {
 
     .site-nav,
     .site-footer__content {
-        width: min(100vw - 24px, 1120px);
+        width: calc(100% - 24px);
+    }
+
+    .site-nav {
+        min-height: 56px;
+        gap: 12px;
     }
 
     .site-nav__links {
-        gap: 2px;
+        gap: 0;
     }
 
     .site-nav__link {
-        padding: 8px 9px;
+        padding: 0 9px;
     }
 
     .theme-toggle {
-        width: 34px;
-        height: 34px;
-        margin-left: 4px;
+        width: 36px;
+        height: 36px;
     }
 
     .hero {
