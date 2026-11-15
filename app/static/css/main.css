@@ -357,7 +357,43 @@ ol {
 }
 
 .hero {
+    position: relative;
+    z-index: 1;
     padding: clamp(48px, 8vw, 92px) 24px clamp(56px, 10vw, 120px);
+}
+
+/* Bouncing head behind the home page sections (scripts/bounce.js). The ball is a point at
+   the centre of the head; the frames hang from it so every beard stage shares that centre. */
+.bounce {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.bounce__ball {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    will-change: transform;
+}
+
+.bounce__frame {
+    --bounce-width: clamp(104px, 13vw, 168px);
+    position: absolute;
+    /* The head centre sits at 50% / 54.9% of the image width in every frame. */
+    left: calc(var(--bounce-width) * -0.5);
+    top: calc(var(--bounce-width) * -0.549);
+    width: var(--bounce-width);
+    max-width: none;
+    image-rendering: pixelated;
+}
+
+.bounce__frame[hidden] {
+    display: none;
 }
 
 .hero__inner {

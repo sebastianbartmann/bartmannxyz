@@ -7,9 +7,12 @@
 {% include 'partials/header.html' %}
 
 <main class="page-root page-root--home">
+    <div class="bounce" data-bounce aria-hidden="true"></div>
     {% include 'home/hero.html' %}
 </main>
 
 {% include 'partials/footer.html' %}
+
+<script src="/static/scripts/bounce.js?v={{ static_version }}" defer></script>
 
 {% endblock %}
