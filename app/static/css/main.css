@@ -396,6 +396,20 @@ ol {
     display: none;
 }
 
+/* Home sections are see-through and spaced apart, so the head stays visible behind them. */
+.page-root--home .hero__card,
+.page-root--home .hero__list {
+    background: color-mix(in srgb, var(--ui-panel) 68%, transparent);
+}
+
+.page-root--home .hero__card {
+    min-height: 400px;
+}
+
+.page-root--home .hero__lists {
+    gap: 32px;
+}
+
 .hero__inner {
     width: min(1120px, 100%);
     margin: 0 auto;
@@ -856,8 +870,17 @@ ol {
         grid-template-columns: 1fr;
     }
 
-    .hero__card {
+    .hero__card,
+    .page-root--home .hero__card {
         min-height: 0;
+    }
+
+    .page-root--home .hero__inner {
+        gap: 40px;
+    }
+
+    .page-root--home .hero__lists {
+        gap: 40px;
     }
 
     .blog-list__item a {
