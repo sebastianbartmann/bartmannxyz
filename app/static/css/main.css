@@ -382,18 +382,43 @@ ol {
 }
 
 .bounce__frame {
-    --bounce-width: clamp(104px, 13vw, 168px);
+    /* Every frame is equally wide; the head takes 50.8% of that width and its centre
+       sits at 50% / 35.1% of the image width (scripts/bounce.js relies on the 50.8%). */
+    --bounce-width: clamp(164px, 20.5vw, 264px);
     position: absolute;
-    /* The head centre sits at 50% / 54.9% of the image width in every frame. */
     left: calc(var(--bounce-width) * -0.5);
-    top: calc(var(--bounce-width) * -0.549);
+    top: calc(var(--bounce-width) * -0.351);
     width: var(--bounce-width);
     max-width: none;
     image-rendering: pixelated;
 }
 
-.bounce__frame[hidden] {
+.bounce__frame[hidden],
+.bounce__flood[hidden] {
     display: none;
+}
+
+/* Finale: beard hair floods the page from the head outwards, later drops off the screen. */
+.bounce__flood {
+    position: absolute;
+    inset: 0;
+    background: url("/static/images/bartmann/beard-texture.png") 0 0 / 418px;
+    image-rendering: pixelated;
+    transition: clip-path 3.5s ease-in;
+}
+
+.bounce__flood.is-falling {
+    transform: translateY(110%) rotate(4deg);
+    transition: transform 1.6s cubic-bezier(0.55, 0, 1, 0.45);
+}
+
+.bounce__hair {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 9px;
+    will-change: transform;
 }
 
 /* Home sections are see-through and spaced apart, so the head stays visible behind them. */
