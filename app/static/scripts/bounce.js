@@ -1,13 +1,14 @@
 /* Home page background: a pixel-art head that bounces off the viewport edges like a ball.
    Each bounce swaps in the next beard stage; after the longest beard it starts over.
    The head is the ball (a circle around the face); the beard hangs outside it and may
-   leave the screen. No motion for visitors who ask for reduced motion. */
+   leave the screen. It bounces for everyone, also with prefers-reduced-motion set
+   (Sebastian's decision, 2026-11-15: the head is the point of the page). */
 (() => {
     const FRAMES = 8;
     const SPEED = 130; // px per second
     const SPIN = 45; // degrees per second
     const host = document.querySelector("[data-bounce]");
-    if (!host || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    if (!host) return;
 
     const version = new URL(document.currentScript.src).search;
     const ball = document.createElement("div");
