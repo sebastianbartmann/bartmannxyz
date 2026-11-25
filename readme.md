@@ -9,7 +9,8 @@ Personal site: FastAPI and Jinja templates, no build step.
   Styles only this site needs go into `local.css`: tokens only, 4px/5px radii, no shadows.
   Templates use tpc's class names and its header and footer markup.
 - Fonts are the self-hosted IBM Plex files from tpc in `app/static/fonts/`. There is no logo
-  mark and no favicon, as on thirdpartycheck.com.
+  mark in the pages, as on thirdpartycheck.com. The tab icon (a "b" on black: `favicon.svg`,
+  `favicon.ico`, `apple-touch-icon.png` in `app/static/`) is served from the root paths.
 - All routes share the Jinja environment in `app/templating.py`.
 - Deployed by Coolify on the Hetzner host from `main`, using the `Dockerfile`.
 - Home page background: `app/static/scripts/bounce.js` bounces a pixel-art head behind the
