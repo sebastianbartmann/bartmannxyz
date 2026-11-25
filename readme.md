@@ -3,9 +3,13 @@
 Personal site: FastAPI and Jinja templates, no build step.
 
 - Run locally: `make run` (http://127.0.0.1:2000).
-- Styles are plain CSS in `app/static/css/main.css`. The colour tokens (`--ui-*`) are the
-  palette of thirdpartycheck.com and requestsearch.com (`tpc/site_assets/chrome.css` in the
-  `tpc` repository); keep them in step.
+- The look is the one of thirdpartycheck.com (decision 2026-11-25). `app/static/css/chrome.css`
+  (fonts, `--ui-*` colour tokens, header, footer) and `site.css` are copies from the `tpc`
+  repository (`tpc/site_assets/`); do not edit them here, change tpc first and copy again.
+  Styles only this site needs go into `local.css`: tokens only, 4px/5px radii, no shadows.
+  Templates use tpc's class names and its header and footer markup.
+- Fonts are the self-hosted IBM Plex files from tpc in `app/static/fonts/`. There is no logo
+  mark and no favicon, as on thirdpartycheck.com.
 - All routes share the Jinja environment in `app/templating.py`.
 - Deployed by Coolify on the Hetzner host from `main`, using the `Dockerfile`.
 - Home page background: `app/static/scripts/bounce.js` bounces a pixel-art head behind the

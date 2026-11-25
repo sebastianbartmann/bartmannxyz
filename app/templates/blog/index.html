@@ -6,16 +6,12 @@
 
 {% include 'partials/header.html' %}
 
-<main class="blog-page page-root page-root--blog">
-    <div class="blog">
+<main id="main-content" class="tool-page blog-page">
+    <div class="page">
+        <h1 class="tool-title">Writing</h1>
         {% include 'blog/partials/overview.html' %}
     </div>
-
-    <div class="blog-page__bottom">
-        <div class="blog">
-            {% include 'blog/partials/linebars.html' %}
-        </div>
-    </div>
+    {% include 'blog/partials/linebars.html' %}
 </main>
 
 {% include 'partials/footer.html' %}

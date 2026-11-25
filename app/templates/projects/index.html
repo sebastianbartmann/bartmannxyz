@@ -5,41 +5,46 @@
 {% block content %}
 {% include 'partials/header.html' %}
 
-<main class="page-root page-root--projects">
-<section class="projects">
-    <div class="projects__eyebrow">Selected work</div>
-    <h1 class="projects__title">Projects</h1>
-    <p class="projects__intro">Tools and experiments around websites, data collection, and consent.</p>
-    <a href="/" class="projects__back">back home</a>
-
-    <h2 class="projects__section-title">Public tools</h2>
-    <ul class="projects__list">
-        <li class="projects__item">
-            <a href="https://thirdpartycheck.com" class="projects__link" data-dl-event="cta_click" data-dl-prop-project="thirdpartycheck">Third Party Check</a>
-            <span class="projects__meta">public scanner</span>
-            <p class="projects__desc">Scan a website and compare third-party domains, cookies, and network requests before and after consent.</p>
-        </li>
-        <li class="projects__item">
-            <a href="https://requestsearch.com" class="projects__link" data-dl-event="cta_click" data-dl-prop-project="requestsearch">Request Search</a>
-            <span class="projects__meta">public dataset search</span>
-            <p class="projects__desc">Search observed third-party hosts, scripts, pixels, SDKs, endpoints, and consent phases from checked websites.</p>
-        </li>
-    </ul>
-
-    <h2 class="projects__section-title projects__section-title--later">Earlier work</h2>
-    <ul class="projects__list">
-        <li class="projects__item">
-            <span class="projects__link projects__link--offline">custom nostr client</span>
-            <span class="projects__meta">published on 07.05.2023 · offline</span>
-            <p class="projects__desc">Curious about nostr, hating all existing clients. Since it is a very simple protocol, why not build my own client?</p>
-        </li>
-        <li class="projects__item">
-            <span class="projects__link projects__link--offline">Weekly median apartment prices in Vienna</span>
-            <span class="projects__meta">published on 13.03.2023 · offline</span>
-            <p class="projects__desc">Crawled directly from apartment listings, twice a week. No filter, just the median.</p>
-        </li>
-    </ul>
-</section>
+<main id="main-content" class="page tool-page">
+    <p class="breadcrumb"><a href="/">back home</a><span>Selected work</span></p>
+    <h1 class="tool-title">Projects</h1>
+    <p class="tool-intro">Tools and experiments around websites, data collection, and consent.</p>
+    <div class="doc">
+        <section class="doc-section">
+            <h2>Public tools</h2>
+            <div class="doc-body">
+                <ul class="link-list link-list--entries">
+                    <li>
+                        <a href="https://thirdpartycheck.com" data-dl-event="cta_click" data-dl-prop-project="thirdpartycheck">Third Party Check</a>
+                        <span class="mono">public scanner</span>
+                        <p>Scan a website and compare third-party domains, cookies, and network requests before and after consent.</p>
+                    </li>
+                    <li>
+                        <a href="https://requestsearch.com" data-dl-event="cta_click" data-dl-prop-project="requestsearch">Request Search</a>
+                        <span class="mono">public dataset search</span>
+                        <p>Search observed third-party hosts, scripts, pixels, SDKs, endpoints, and consent phases from checked websites.</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section class="doc-section">
+            <h2>Earlier work</h2>
+            <div class="doc-body">
+                <ul class="link-list link-list--entries">
+                    <li>
+                        <span>custom nostr client</span>
+                        <span class="mono">published on 07.05.2023 · offline</span>
+                        <p>Curious about nostr, hating all existing clients. Since it is a very simple protocol, why not build my own client?</p>
+                    </li>
+                    <li>
+                        <span>Weekly median apartment prices in Vienna</span>
+                        <span class="mono">published on 13.03.2023 · offline</span>
+                        <p>Crawled directly from apartment listings, twice a week. No filter, just the median.</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </div>
 </main>
 
 {% include 'partials/footer.html' %}

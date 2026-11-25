@@ -13,9 +13,10 @@
         }
     </script>
 
-    <link rel="icon" href="/static/favicon.svg" type="image/svg+xml">
     <meta name="description" content="Sebastian Bartmann builds agent-facing internet tools and writes about the work."/>
-    <link rel="stylesheet" href="/static/css/main.css?v={{ static_version }}">
+    <link rel="stylesheet" href="/static/css/chrome.css?v={{ static_version }}">
+    <link rel="stylesheet" href="/static/css/site.css?v={{ static_version }}">
+    <link rel="stylesheet" href="/static/css/local.css?v={{ static_version }}">
     {#- consent-layer tracker and consent panel (served by the collector under /dl/).
         The privacy page overrides this block with nothing: it must load neither tag. #}
     {% block consent_layer %}

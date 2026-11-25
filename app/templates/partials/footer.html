@@ -1,13 +1,10 @@
 <footer class="site-footer">
-    <div class="site-footer__content">
-        <p>© {{ current_year() }} Sebastian Bartmann</p>
-        <nav class="site-footer__links" aria-label="Footer">
-            <a href="/projects" class="site-footer__link">Projects</a>
-            <a href="/blog" class="site-footer__link">Writing</a>
-            <a href="/privacy" class="site-footer__link">Privacy</a>
-            <a href="/privacy" class="site-footer__link" data-dl-open>Privacy choices</a>
-            <a href="mailto:hey@bartmann.xyz" class="site-footer__link"
-               data-dl-event="contact_click" data-dl-prop-channel="email">hey@bartmann.xyz</a>
-        </nav>
+    <div class="container site-footer__inner">
+        <a href="/projects">Projects</a>
+        <a href="/blog">Writing</a>
+        <a href="/privacy">Privacy</a>
+        <a href="/privacy" data-dl-open>Privacy choices</a>
+        <a href="mailto:hey@bartmann.xyz" data-dl-event="contact_click" data-dl-prop-channel="email">hey@bartmann.xyz</a>
+        <span>© {{ current_year() }} Sebastian Bartmann</span>
     </div>
 </footer>

@@ -6,12 +6,11 @@
 
 {% include 'partials/header.html' %}
 
-<main class="blog-page page-root page-root--blog">
-    <div class="blog blog--post">
+<main id="main-content" class="page tool-page">
+    <article>
         {% block post %}
         {% endblock %}
-    </div>
-
+    </article>
 </main>
 
 {% include 'partials/footer.html' %}

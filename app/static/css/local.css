@@ -1,0 +1,89 @@
+/* Only on bartmann.xyz; load after chrome.css and site.css, which are copies from the tpc
+   repository and are not edited here. Colours come from the --ui-* tokens only. */
+/* The head on the home page runs behind the content but never over header or footer. */
+.site-header, .site-footer { position: relative; z-index: 2; }
+img { max-width: 100%; height: auto; }
+
+/* Links that look like buttons; lists outside a .doc-body; a title followed directly by content. */
+a.tool-submit, a.tool-button { display: inline-flex; align-items: center; justify-content: center; }
+a.tool-submit:hover { text-decoration: none; }
+ul.token-list { display: flex; flex-wrap: wrap; gap: 6px; margin: 0; padding: 0; list-style: none; }
+ul.link-list { margin: 0; padding: 0; list-style: none; }
+.tool-title + .prose, .tool-title + .link-list { margin-top: 24px; }
+.breadcrumb .mono { font-size: 13px; }
+
+/* Entries: a link list whose rows carry a name, a mono note and a description (projects, posts). */
+.link-list--entries { max-width: 980px; border-bottom: 1px solid var(--ui-line); }
+.link-list--entries li, .link-list--entries li:first-child { padding: 14px 0; border-top: 1px solid var(--ui-line); }
+.doc-body .link-list--entries { border-bottom: 0; }
+.doc-body .link-list--entries li:first-child { padding-top: 0; border-top: 0; }
+.doc-body .link-list--entries li:last-child { padding-bottom: 0; }
+.link-list--entries li > :first-child { color: var(--ui-strong); font: 600 17px/1.35 var(--font-sans); }
+.link-list--entries li > a:first-child { color: var(--ui-accent); }
+.link-list--entries p { flex-basis: 100%; margin: 4px 0 0; color: var(--ui-muted); font-size: 14px; }
+
+/* Panels: the flat TPC box (1px line, 5px radius, no shadow) for the home page sections. */
+.panel { padding: 20px; border: 1px solid var(--ui-line); border-radius: 5px; background: var(--ui-panel); }
+.panel-title { margin: 0 0 12px; font: 600 22px/1.2 var(--font-display); letter-spacing: -.005em; }
+
+/* Home: see-through panels spaced apart, so the bouncing head stays visible behind them. */
+.home-grid { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(300px, .92fr); gap: 32px clamp(28px, 5vw, 64px); align-items: start; padding-top: clamp(0px, 5vh, 56px); }
+.home .panel { background: color-mix(in srgb, var(--ui-panel) 68%, transparent); }
+.home-intro { padding: clamp(20px, 3vw, 32px); }
+.home-intro .tool-title { font-size: clamp(2rem, 4vw, 3.25rem); line-height: 1.02; }
+.home-intro .tool-intro { margin-bottom: 0; }
+.home-intro .tool-actions { margin-top: 24px; }
+.home-mood { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; margin-top: 24px; color: var(--ui-muted); }
+.home-lists { display: grid; gap: 32px; }
+
+/* Bouncing head behind the home page sections (scripts/bounce.js). The ball is a point at
+   the centre of the head; the frames hang from it so every beard stage shares that centre. */
+.bounce { position: fixed; inset: 0; z-index: 0; overflow: hidden; pointer-events: none; }
+.bounce__ball { position: absolute; top: 0; left: 0; width: 0; height: 0; will-change: transform; }
+/* Every frame is equally wide; the head takes 50.8% of that width and its centre sits at
+   50% / 35.1% of the image width (scripts/bounce.js relies on the 50.8%). */
+.bounce__frame { --bounce-width: clamp(164px, 20.5vw, 264px); position: absolute; left: calc(var(--bounce-width) * -0.5); top: calc(var(--bounce-width) * -0.351); width: var(--bounce-width); max-width: none; image-rendering: pixelated; }
+/* Finale: beard hair floods the page from the head outwards, later drops off the screen. */
+.bounce__flood { position: absolute; inset: 0; background: url("/static/images/bartmann/beard-texture.png") 0 0 / 418px; image-rendering: pixelated; transition: clip-path 3.5s ease-in; }
+.bounce__flood.is-falling { transform: translateY(110%) rotate(4deg); transition: transform 1.6s cubic-bezier(0.55, 0, 1, 0.45); }
+.bounce__hair { position: absolute; top: 0; left: 0; width: 3px; height: 9px; will-change: transform; }
+
+/* Writing: the bars sit at the bottom of the page and run off its right edge. */
+.blog-page { display: flex; flex-direction: column; padding-bottom: 0; }
+.linebars { display: flex; flex-direction: column; align-items: flex-end; gap: 8px; width: 75%; margin: auto 0 0 auto; padding: 56px 0 48px; }
+.linebar { display: flex; align-items: center; min-height: 44px; padding: 9px 16px; border: 1px solid var(--ui-line); border-right: 0; border-radius: 4px 0 0 4px; background: var(--ui-panel); color: var(--ui-accent); font: 600 14px/1.5 var(--font-sans); }
+a.linebar:hover { background: var(--ui-hover); text-decoration: none; }
+
+/* Posts */
+.prose img { display: block; margin: 0 0 16px; border: 1px solid var(--ui-line); border-radius: 5px; }
+.prose .tool-notice { margin-block: 0 16px; }
+.prose .tool-notice h2 { margin: 0 0 4px; font: 600 15px/1.4 var(--font-sans); letter-spacing: 0; }
+.prose .tool-notice p { margin: 0; }
+.prose .tool-notice p + p { margin-top: 8px; }
+
+/* Privacy: the table may use the full column; on small screens each row becomes a labelled block. */
+.doc-body--wide { max-width: none; }
+.doc-body--wide > p, .doc-body--wide > ul { max-width: 68ch; }
+.doc-body .tool-table-wrap, .doc-body .tool-actions { margin: 0 0 12px; }
+.doc-body .tool-table code { padding: 0; background: none; }
+.tool-table--labelled td:first-child { white-space: nowrap; }
+
+@media (max-width: 860px) {
+  .home-grid { grid-template-columns: 1fr; gap: 40px; padding-top: 0; }
+  .home-lists { gap: 40px; }
+}
+@media (max-width: 650px) {
+  .tool-table--labelled thead { display: none; }
+  .tool-table--labelled, .tool-table--labelled tbody, .tool-table--labelled tr, .tool-table--labelled td { display: block; }
+  .tool-table--labelled tr { padding: 10px 12px; border-top: 1px solid var(--ui-line); }
+  .tool-table--labelled tr:first-child { border-top: 0; }
+  .tool-table--labelled td, .tool-table--labelled td:first-child { padding: 2px 0; border-top: 0; white-space: normal; }
+  .tool-table--labelled td::before { content: attr(data-label) ": "; color: var(--ui-muted); }
+  .linebars { width: 88%; }
+}
+/* The head bounces for everyone, also with prefers-reduced-motion (decision 2026-11-15), so the
+   finale keeps its transitions where site.css shortens all others. */
+@media (prefers-reduced-motion: reduce) {
+  .bounce__flood { transition-duration: 3.5s !important; }
+  .bounce__flood.is-falling { transition-duration: 1.6s !important; }
+}

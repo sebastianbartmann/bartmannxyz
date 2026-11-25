@@ -9,9 +9,9 @@ STATIC_DIR = BASE_DIR / "static"
 
 templates = Jinja2Templates(directory=BASE_DIR / "templates")
 
-# Cache-busting query value for the stylesheet, scripts and bounce images: newest modification time.
+# Cache-busting query value for the stylesheets, scripts and bounce images: newest modification time.
 _versioned = [
-    STATIC_DIR / "css" / "main.css",
+    *sorted((STATIC_DIR / "css").glob("*.css")),
     STATIC_DIR / "scripts" / "theme.js",
     STATIC_DIR / "scripts" / "bounce.js",
     *sorted((STATIC_DIR / "images" / "bartmann").glob("*.png")),

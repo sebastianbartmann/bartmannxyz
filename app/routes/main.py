@@ -29,8 +29,3 @@ async def robots_txt():
 @router.get("/sitemap.xml")
 async def sitemap_xml():
     return FileResponse(STATIC_DIR / "sitemap.xml", media_type="application/xml")
-
-
-@router.get("/favicon.ico")
-async def favicon():
-    return FileResponse(STATIC_DIR / "favicon.svg", media_type="image/svg+xml")
