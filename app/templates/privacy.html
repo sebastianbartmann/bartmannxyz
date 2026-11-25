@@ -14,19 +14,20 @@
     <h1 class="tool-title">Privacy</h1>
     <p class="tool-intro">What this site records about your visit, why, and how to stop it.
         Nothing is recorded for this page itself.</p>
+    <p class="page-meta">Last updated: 25 November 2026</p>
     <div class="doc">
         <section class="doc-section">
             <h2>Who is responsible</h2>
             <div class="doc-body">
             <p>Sebastian Bartmann, <a href="mailto:hey@bartmann.xyz">hey@bartmann.xyz</a>.
-                I run this site and the sites named below myself.</p>
+                I run this site myself.</p>
             </div>
         </section>
         <section class="doc-section">
             <h2>The consent panel</h2>
             <div class="doc-body">
             <p>On your first visit a panel asks whether this site may recognise your browser on later
-                visits and on my other sites. You choose <em>Accept</em> or <em>Reject</em>; the page
+                visits. You choose <em>Accept</em> or <em>Reject</em>; the page
                 cannot be used until you have chosen. You can change your choice at any time with
                 <em>Privacy choices</em> in the footer of every page.</p>
             <p>Until you have chosen, only the fact that the panel was shown is counted: the page
@@ -44,6 +45,8 @@
                 well. Your choice lasts 12 months; after that, or when the panel text changes, you are
                 asked again and a new visitor ID is issued. Every new consent also gets a new visitor
                 ID. Legal basis: your consent (Art. 6(1)(a) GDPR).</p>
+            <p>The ID is used on this site only. It is not shared with any other website and not linked
+                to visits anywhere else.</p>
             </div>
         </section>
         <section class="doc-section">
@@ -76,9 +79,7 @@
                     above</li>
                 <li>only if you accepted: the visitor ID, browser language and window width</li>
             </ul>
-            <p>This site has no search or input forms. On requestsearch.com and thirdpartycheck.com the
-                search terms and checked domains entered there are recorded; their privacy pages
-                describe this.</p>
+            <p>This site has no search or input forms.</p>
             </div>
         </section>
         <section class="doc-section">
@@ -105,37 +106,11 @@
                         <td data-label="Lifetime">Until your consent expires (12 months, not extended); deleted when you
                             reject or withdraw</td>
                     </tr>
-                    <tr>
-                        <td data-label="Name"><code>__Host-dl_g</code></td>
-                        <td data-label="Set on">id.datalayer.solutions</td>
-                        <td data-label="Purpose">Random ID that links your visitor IDs on my sites (see below). Only after
-                            you accept.</td>
-                        <td data-label="Lifetime">12 months from its last use</td>
-                    </tr>
                     </tbody>
                 </table>
             </div>
-            <p>After you accept, the site also keeps a short marker (<code>dl_gs</code>) in the
-                browser's session storage, which is cleared when you close the tab. The dark mode
-                switch stores your colour preference in your browser's local storage; it is never
-                sent anywhere.</p>
-            </div>
-        </section>
-        <section class="doc-section">
-            <h2>Recognition across my sites</h2>
-            <div class="doc-body">
-            <p>I also run thirdpartycheck.com, requestsearch.com and datalayer.solutions. Each site asks
-                separately. Your visits are linked between two of these sites only if you accepted on
-                both. Two ways are used:</p>
-            <ul>
-                <li>When you follow a link from one of these sites to another, a one-time random code
-                    is added to the address (<code>?_dl=…</code>) and removed again on arrival.</li>
-                <li>The cookie <code>__Host-dl_g</code> on id.datalayer.solutions holds a random ID that
-                    each site you accepted on can match once per browser session. This cookie is only
-                    used once cross-site recognition through id.datalayer.solutions is switched on;
-                    browsers that block third-party cookies prevent it.</li>
-            </ul>
-            <p>Both only show that the same browser was probably used, not who you are.</p>
+            <p>The dark mode switch stores your colour preference in your browser's local storage; it is
+                never sent anywhere. Nothing else is kept in browser storage.</p>
             </div>
         </section>
         <section class="doc-section">
@@ -147,9 +122,8 @@
                 about individual visitors, are kept after that.</p>
             <p>The data is not passed on or sold to anyone, and no third-party analytics or advertising
                 tools are used. The pages load no resources from third parties: fonts, scripts, styles
-                and images all come from bartmann.xyz itself. The only other host your browser contacts
-                is my own id.datalayer.solutions: for the cross-site cookie described above, only after
-                you accept, and when you use the <em>Forget me across sites</em> button below.</p>
+                and images all come from bartmann.xyz itself. Your browser contacts
+                no other host.</p>
             </div>
         </section>
         <section class="doc-section">
@@ -161,11 +135,6 @@
             <form class="tool-actions" method="post" action="/dl/c">
                 <input type="hidden" name="choice" value="withdrawn">
                 <button class="tool-button" type="submit">Withdraw consent on this site</button>
-            </form>
-            <p>To stop your visits from being linked across my sites, also delete the shared cookie on
-                id.datalayer.solutions:</p>
-            <form class="tool-actions" method="post" action="https://id.datalayer.solutions/dl/g/forget">
-                <button class="tool-button" type="submit">Forget me across sites</button>
             </form>
             </div>
         </section>
