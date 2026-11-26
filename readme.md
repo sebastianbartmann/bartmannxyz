@@ -19,3 +19,8 @@ Personal site: FastAPI and Jinja templates, no build step.
   `app/static/images/bartmann/beard-0.png` to `beard-11.png`: all 512px wide, head 50.8% of
   the width, head centre at 50% / 35.1% of the width (the CSS and script rely on this). Set
   `FRAMES` in the script when adding stages.
+- Posts are templates in `app/templates/blog/posts/` extending `blog/post.html`, which adds the
+  way back and the date above the title. A new post sets the `post_title` and `post_date`
+  blocks and gets a row in `blog/partials/overview.html` and `app/static/sitemap.xml`.
+- Coolify does not deploy on push; start the deploy through its API (vault:
+  `infrastructure/hetzner.md`).

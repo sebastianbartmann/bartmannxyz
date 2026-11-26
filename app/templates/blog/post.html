@@ -7,9 +7,16 @@
 {% include 'partials/header.html' %}
 
 <main id="main-content" class="page tool-page">
-    <article>
+    <article class="post">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="/blog">← Writing</a>
+            <time class="mono" datetime="{{ self.post_date() }}">{% block post_date %}{% endblock %}</time>
+        </nav>
         {% block post %}
         {% endblock %}
+        <footer class="post-end">
+            <a href="/blog">← All writing</a>
+        </footer>
     </article>
 </main>
 

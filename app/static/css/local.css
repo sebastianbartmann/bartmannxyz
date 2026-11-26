@@ -54,12 +54,25 @@ ul.link-list { margin: 0; padding: 0; list-style: none; }
 .linebar { display: flex; align-items: center; min-height: 44px; padding: 9px 16px; border: 1px solid var(--ui-line); border-right: 0; border-radius: 4px 0 0 4px; background: var(--ui-panel); color: var(--ui-accent); font: 600 14px/1.5 var(--font-sans); }
 a.linebar:hover { background: var(--ui-hover); text-decoration: none; }
 
-/* Posts */
-.prose img { display: block; margin: 0 0 16px; border: 1px solid var(--ui-line); border-radius: 5px; }
-.prose .tool-notice { margin-block: 0 16px; }
-.prose .tool-notice h2 { margin: 0 0 4px; font: 600 15px/1.4 var(--font-sans); letter-spacing: 0; }
-.prose .tool-notice p { margin: 0; }
-.prose .tool-notice p + p { margin-top: 8px; }
+/* Posts: one centred reading column with larger text; way back and date above the title. */
+.post { max-width: 680px; margin-inline: auto; }
+.post .breadcrumb { justify-content: space-between; margin-bottom: 28px; }
+.post .tool-title { font-size: clamp(34px, 5vw, 48px); padding-bottom: 28px; border-bottom: 1px solid var(--ui-line); }
+.post .tool-title + .prose { margin-top: 32px; }
+.post .prose { max-width: none; font-size: 18px; line-height: 1.7; }
+.post .prose p, .post .prose ul, .post .prose ol { margin-bottom: 22px; }
+.post .prose h2 { margin: 44px 0 12px; font: 600 26px/1.2 var(--font-display); letter-spacing: -.005em; color: var(--ui-strong); }
+.post .prose h3 { margin: 32px 0 8px; font-size: 18px; color: var(--ui-strong); }
+.post .prose li + li { margin-top: 6px; }
+.post .prose strong { color: var(--ui-strong); }
+.post .prose code { font-size: 15px; }
+.post .prose img { display: block; margin: 32px 0; border: 1px solid var(--ui-line); border-radius: 5px; }
+.post .prose .tool-notice { margin-block: 0 22px; padding: 16px 18px; font-size: 16px; line-height: 1.6; }
+.post .prose .tool-notice h2 { margin: 0 0 6px; font: 600 13px/1.4 var(--font-mono); letter-spacing: 0; color: var(--ui-muted); }
+.post .prose .tool-notice p { margin: 0; }
+.post .prose .tool-notice p + p { margin-top: 10px; }
+.post-end { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--ui-line); font-size: 15px; }
+.post-end a { display: inline-flex; align-items: center; min-height: 44px; }
 
 /* Privacy: the table may use the full column; on small screens each row becomes a labelled block. */
 .doc-body--wide { max-width: none; }
@@ -80,6 +93,7 @@ a.linebar:hover { background: var(--ui-hover); text-decoration: none; }
   .tool-table--labelled td, .tool-table--labelled td:first-child { padding: 2px 0; border-top: 0; white-space: normal; }
   .tool-table--labelled td::before { content: attr(data-label) ": "; color: var(--ui-muted); }
   .linebars { width: 88%; }
+  .post .prose { font-size: 17px; line-height: 1.65; }
 }
 /* The head bounces for everyone, also with prefers-reduced-motion (decision 2026-11-15), so the
    finale keeps its transitions where site.css shortens all others. */
