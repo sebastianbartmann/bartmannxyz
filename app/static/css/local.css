@@ -63,6 +63,9 @@ a.linebar:hover { background: var(--ui-hover); text-decoration: none; }
 .post .prose p, .post .prose ul, .post .prose ol { margin-bottom: 22px; }
 .post .prose h2 { margin: 44px 0 12px; font: 600 26px/1.2 var(--font-display); letter-spacing: -.005em; color: var(--ui-strong); }
 .post .prose h3 { margin: 32px 0 8px; font-size: 18px; color: var(--ui-strong); }
+.post .prose .lede { margin-bottom: 28px; color: var(--ui-strong); font-size: 22px; line-height: 1.5; }
+.post .prose blockquote { margin: 36px 0; padding: 4px 0 4px 20px; border-left: 3px solid var(--ui-accent); }
+.post .prose blockquote p { margin: 0; color: var(--ui-strong); font: 600 28px/1.25 var(--font-display); letter-spacing: -.005em; }
 .post .prose li + li { margin-top: 6px; }
 .post .prose strong { color: var(--ui-strong); }
 .post .prose code { font-size: 15px; }
@@ -94,6 +97,8 @@ a.linebar:hover { background: var(--ui-hover); text-decoration: none; }
   .tool-table--labelled td::before { content: attr(data-label) ": "; color: var(--ui-muted); }
   .linebars { width: 88%; }
   .post .prose { font-size: 17px; line-height: 1.65; }
+  .post .prose .lede { font-size: 20px; }
+  .post .prose blockquote p { font-size: 24px; }
 }
 /* The head bounces for everyone, also with prefers-reduced-motion (decision 2026-11-15), so the
    finale keeps its transitions where site.css shortens all others. */
